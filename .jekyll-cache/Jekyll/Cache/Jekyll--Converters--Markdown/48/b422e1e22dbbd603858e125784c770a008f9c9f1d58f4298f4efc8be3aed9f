@@ -1,0 +1,153 @@
+I"L<script type="text/javascript" async="" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.0/es5/tex-mml-chtml.js">
+</script>
+
+<hr />
+
+<h1 id="portfolio-optimization-project">Portfolio Optimization Project</h1>
+
+<p>In this project, I applied several advanced mathematical models to construct and optimize a portfolio, including <strong>Classic Portfolio Optimization</strong>, the <strong>Black-Litterman Model</strong>, and several <strong>Objective Functions</strong> and <strong>Risk Measures</strong>. Below is an explanation of the mathematical theory behind each component.</p>
+
+<h2 id="classic-portfolio-optimization-mean-variance-optimization">Classic Portfolio Optimization (Mean-Variance Optimization)</h2>
+
+<p><strong>Mean-Variance Optimization</strong> (MVO), introduced by Harry Markowitz, focuses on optimizing a portfolio’s expected return and risk (variance). The objective is to find a set of asset weights that either maximize return for a given level of risk or minimize risk for a given expected return.</p>
+
+<h3 id="1-expected-return">1. <strong>Expected Return:</strong></h3>
+<p>The <strong>expected return</strong> of a portfolio is a weighted average of the expected returns of the individual assets:</p>
+
+\[\mu_p = \sum_{i=1}^{N} w_i r_i = \mathbf{w}^T \mathbf{r}\]
+
+<p>Where:</p>
+<ul>
+  <li>$( \mu_p )$ is the expected return of the portfolio.</li>
+  <li>$( w_i )$ is the weight of asset ( i ) in the portfolio.</li>
+  <li>$( r_i )$ is the expected return of asset ( i ).</li>
+  <li>$( \mathbf{w} )$ is the vector of asset weights.</li>
+  <li>( \mathbf{r} ) is the vector of expected returns.</li>
+</ul>
+
+<h3 id="2-portfolio-variance-risk">2. <strong>Portfolio Variance (Risk):</strong></h3>
+<p>The <strong>variance</strong> of a portfolio measures the portfolio’s risk, accounting for how the returns of the assets move together (covariance):</p>
+
+\[\sigma_p^2 = \mathbf{w}^T \Sigma \mathbf{w}\]
+
+<p>Where:</p>
+<ul>
+  <li>( \sigma_p^2 ) is the portfolio variance.</li>
+  <li>( \Sigma ) is the covariance matrix of asset returns.</li>
+</ul>
+
+<h3 id="3-optimization-problem">3. <strong>Optimization Problem:</strong></h3>
+<p>The optimization can be set up as:</p>
+
+<ul>
+  <li><strong>Minimizing Risk:</strong></li>
+</ul>
+
+\[\min_{\mathbf{w}} \ \mathbf{w}^T \Sigma \mathbf{w}\]
+
+<p>Subject to:</p>
+
+\[\mathbf{w}^T \mathbf{r} = \mu_p, \quad \sum_{i=1}^{N} w_i = 1, \quad w_i \geq 0 \ (\text{for long-only portfolios})\]
+
+<p>In this equation:</p>
+<ul>
+  <li>The goal is to minimize portfolio variance while achieving a certain expected return ( \mu_p ).</li>
+  <li>The sum of weights equals 1 to ensure full investment.</li>
+  <li>The weights ( w_i \geq 0 ) for long-only portfolios (no short selling).</li>
+</ul>
+
+<h2 id="black-litterman-model">Black-Litterman Model</h2>
+
+<p>The <strong>Black-Litterman Model</strong> adjusts the traditional Markowitz optimization by blending market equilibrium returns with investor views. This model allows for incorporating subjective insights into the optimization process, mitigating the sensitivity of inputs in the classic approach.</p>
+
+<h3 id="1-market-equilibrium-returns">1. <strong>Market Equilibrium Returns:</strong></h3>
+<p>In equilibrium, the implied returns ( \Pi ) are reverse-engineered from the market weights ( w_m ) using the following equation:</p>
+
+\[\Pi = \delta \Sigma w_m\]
+
+<p>Where:</p>
+<ul>
+  <li>( \delta ) is the risk-aversion coefficient.</li>
+  <li>( \Sigma ) is the covariance matrix of returns.</li>
+  <li>( w_m ) are the market capitalization weights.</li>
+</ul>
+
+<h3 id="2-investor-views">2. <strong>Investor Views:</strong></h3>
+<p>The investor has views on certain assets, which are represented by the matrix ( P ) (linking assets to views) and the expected return vector ( Q ). The uncertainty in the investor’s views is captured by the matrix ( \Omega ).</p>
+
+<h3 id="3-blended-expected-returns">3. <strong>Blended Expected Returns:</strong></h3>
+<p>The expected returns ( \Pi_{\text{BL}} ) under the Black-Litterman model are a weighted combination of the market equilibrium returns and the investor views:</p>
+
+\[\Pi_{\text{BL}} = \left[ (\tau \Sigma)^{-1} + P^T \Omega^{-1} P \right]^{-1} \left[ (\tau \Sigma)^{-1} \Pi + P^T \Omega^{-1} Q \right]\]
+
+<p>Where:</p>
+<ul>
+  <li>( \tau ) is a scalar reflecting the uncertainty of the equilibrium returns.</li>
+  <li>( P ) is the matrix defining investor views.</li>
+  <li>( Q ) is the vector of expected returns for the views.</li>
+  <li>( \Omega ) is the covariance matrix of the views.</li>
+</ul>
+
+<h2 id="objective-functions">Objective Functions</h2>
+
+<p>Objective functions define what we aim to optimize in the portfolio. I used the following:</p>
+
+<h3 id="1-maximizing-the-sharpe-ratio">1. <strong>Maximizing the Sharpe Ratio:</strong></h3>
+<p>The <strong>Sharpe Ratio</strong> is a measure of risk-adjusted return. We maximize it to get the highest possible return for each unit of risk:</p>
+
+\[\text{Sharpe Ratio} = \frac{R_p - R_f}{\sigma_p}\]
+
+<p>Where:</p>
+<ul>
+  <li>( R_p ) is the expected portfolio return.</li>
+  <li>( R_f ) is the risk-free rate.</li>
+  <li>( \sigma_p ) is the standard deviation of portfolio returns (portfolio risk).</li>
+</ul>
+
+<p>The optimization problem becomes:</p>
+
+\[\max_{\mathbf{w}} \ \frac{\mathbf{w}^T \mathbf{r} - R_f}{\sqrt{\mathbf{w}^T \Sigma \mathbf{w}}}\]
+
+<h3 id="2-minimizing-risk-variance">2. <strong>Minimizing Risk (Variance):</strong></h3>
+<p>In this case, the goal is to minimize the portfolio’s risk for a given return:</p>
+
+\[\min_{\mathbf{w}} \ \mathbf{w}^T \Sigma \mathbf{w}\]
+
+<p>This leads to a low-risk portfolio but doesn’t necessarily maximize returns.</p>
+
+<h3 id="3-maximizing-return">3. <strong>Maximizing Return:</strong></h3>
+<p>This objective maximizes the portfolio’s expected return:</p>
+
+\[\max_{\mathbf{w}} \ \mathbf{w}^T \mathbf{r}\]
+
+<p>This aims to maximize profit, but the risk level may be high.</p>
+
+<h2 id="risk-measures">Risk Measures</h2>
+
+<p>To assess and manage risk, I used the following measures:</p>
+
+<h3 id="1-value-at-risk-var">1. <strong>Value-at-Risk (VaR):</strong></h3>
+<p><strong>Value-at-Risk (VaR)</strong> estimates the maximum loss over a specified period for a given confidence level ( \alpha ):</p>
+
+\[\text{VaR}_{\alpha} = \inf \{ x \in \mathbb{R} : P(L &gt; x) \leq 1 - \alpha \}\]
+
+<p>Where ( L ) is the loss over the specified time period. For example, a 95% VaR might indicate the portfolio will lose no more than $1,000 with 95% confidence.</p>
+
+<h3 id="2-conditional-value-at-risk-cvar">2. <strong>Conditional Value-at-Risk (CVaR):</strong></h3>
+<p><strong>CVaR</strong> (also called Expected Shortfall) is the average loss that exceeds the VaR. It is used to capture the risk of extreme losses:</p>
+
+\[\text{CVaR}_{\alpha} = \mathbb{E}[L \ | \ L &gt; \text{VaR}_{\alpha}]\]
+
+<p>This is a more conservative risk measure, focusing on tail risk.</p>
+
+<h3 id="3-maximum-drawdown-mdd">3. <strong>Maximum Drawdown (MDD):</strong></h3>
+<p><strong>Maximum Drawdown</strong> measures the maximum observed loss from the peak to the trough of the portfolio’s value during a given period:</p>
+
+\[\text{MDD} = \max_{t \in [0,T]} \left( \frac{\text{peak}_t - \text{trough}_t}{\text{peak}_t} \right)\]
+
+<p>This gives an idea of the worst-case scenario for potential losses.</p>
+
+<hr />
+
+<p>By using these mathematical models, it enables users to construct portfolios that balance risk and return effectively. The combination of <strong>Classic Portfolio Optimization</strong>, the <strong>Black-Litterman Model</strong>, and these <strong>Objective Functions</strong> and <strong>Risk Measures</strong> allows for a highly customizable and sophisticated approach to portfolio management.</p>
+:ET

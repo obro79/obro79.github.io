@@ -1,20 +1,20 @@
 navbar_entries:
-  - title: about
+  - title: About
     url: about
 
-  - title: blog
+  - title: Course Reviews
     url: blog
 
-  - title: website
+  - title: Course Notes
     url: https://www.abhinav.co
 
 project_entries:
-  - title: Project 1
-    url: overview-post
+  - title: Portfolio Optimizer
+    url: /portfolio-optimizer/
     desc: This is an example project, configured in _data/home.yml
 
-  - title: Project 2
-    url: overview-post
+  - title: Option Pricing / Monte Carlo Simulation
+    url: /option-pricer/
     desc: Projects are shown in card layout
 
   - title: Project 3
