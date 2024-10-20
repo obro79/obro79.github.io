@@ -10,11 +10,11 @@ navbar_entries:
 
 project_entries:
   - title: Portfolio Optimizer
-    url: https://obro79.github.io/portfolio-optimizer/
+    url: /portfolio-optimizer/
     desc: This is an example project, configured in _data/home.yml
 
   - title: Option Pricing / Monte Carlo Simulation
-    url: "{{ site.baseurl }}/option-pricing/"
+    url: "/option-pricing/"
     desc: Projects are shown in card layout
 
   - title: Project 3

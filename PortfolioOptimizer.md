@@ -1,7 +1,7 @@
 ---
 layout: default
 author: Owen Fisher
-permalink: https://obro79.github.io/portfolio-optimizer/
+permalink: /portfolio-optimizer/
 ---
 
 <!-- Include MathJax Script -->

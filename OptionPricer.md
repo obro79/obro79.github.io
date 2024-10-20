@@ -1,12 +1,17 @@
 ---
 layout: default
 title: "Language Tests"
-permalink: "/portfolio-optimizer/"
+permalink: "/option-pricer/"
 
 ---
 layout: default
 title: Options Pricing and Monte Carlo Methods Project
 ---
+
+<!-- Include MathJax Script -->
+<script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.0/es5/tex-mml-chtml.js">
+</script>
 
 # Options Pricing and Monte Carlo Methods Project
 
