@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Language Tests"
-permalink: "/option-pricer/"
+permalink: /option-pricer/
 
 ---
 layout: default
