@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: default
 title: "Language Tests"
 permalink: /option-pricer/
 
