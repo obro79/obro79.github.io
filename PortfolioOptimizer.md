@@ -26,11 +26,11 @@ $$
 $$
 
 Where:
-- $\( \mu_p \)$ is the expected return of the portfolio.
-- $\( w_i \)$ is the weight of asset \( i \) in the portfolio.
-- $\( r_i \)$ is the expected return of asset \( i \).
+- \(\mu_p\) is the expected return of the portfolio.
+- \(w_i\) is the weight of asset \(i\) in the portfolio.
+- \(r_i\) is the expected return of asset \(i\).
 - $\( \mathbf{w} \)$ is the vector of asset weights.
-- \( \mathbf{r} \) is the vector of expected returns.
+- \(\mathbf{r}\) is the vector of expected returns.
 
 ### 2. **Portfolio Variance (Risk):**
 The **variance** of a portfolio measures the portfolio’s risk, accounting for how the returns of the assets move together (covariance):
@@ -40,8 +40,8 @@ $$
 $$
 
 Where:
-- \( \sigma_p^2 \) is the portfolio variance.
-- \( \Sigma \) is the covariance matrix of asset returns.
+- \(\sigma_p^2\) is the portfolio variance.
+- \(\Sigma\) is the covariance matrix of asset returns.
 
 ### 3. **Optimization Problem:**
 The optimization can be set up as:
@@ -75,12 +75,12 @@ $$
 $$
 
 Where:
-- \( \delta \) is the risk-aversion coefficient.
-- \( \Sigma \) is the covariance matrix of returns.
-- \( w_m \) are the market capitalization weights.
+- \(\delta\) is the risk-aversion coefficient.
+- \(\Sigma\) is the covariance matrix of returns.
+- \(w_m\) are the market capitalization weights.
 
 ### 2. **Investor Views:**
-The investor has views on certain assets, which are represented by the matrix \( P \) (linking assets to views) and the expected return vector \( Q \). The uncertainty in the investor’s views is captured by the matrix \( \Omega \).
+The investor has views on certain assets, which are represented by the matrix \(P\) (linking assets to views) and the expected return vector \(Q\). The uncertainty in the investor’s views is captured by the matrix \(\Omega\).
 
 ### 3. **Blended Expected Returns:**
 The expected returns \( \Pi_{\text{BL}} \) under the Black-Litterman model are a weighted combination of the market equilibrium returns and the investor views:
@@ -90,10 +90,10 @@ $$
 $$
 
 Where:
-- \( \tau \) is a scalar reflecting the uncertainty of the equilibrium returns.
-- \( P \) is the matrix defining investor views.
-- \( Q \) is the vector of expected returns for the views.
-- \( \Omega \) is the covariance matrix of the views.
+- \(\tau\) is a scalar reflecting the uncertainty of the equilibrium returns.
+- \(P\) is the matrix defining investor views.
+- \(Q\) is the vector of expected returns for the views.
+- \(\Omega\) is the covariance matrix of the views.
 
 ## Objective Functions
 
@@ -107,9 +107,9 @@ $$
 $$
 
 Where:
-- \( R_p \) is the expected portfolio return.
-- \( R_f \) is the risk-free rate.
-- \( \sigma_p \) is the standard deviation of portfolio returns (portfolio risk).
+- \(R_p\) is the expected portfolio return.
+- \(R_f\) is the risk-free rate.
+- \(\sigma_p\) is the standard deviation of portfolio returns (portfolio risk).
 
 The optimization problem becomes:
 
@@ -140,7 +140,7 @@ This aims to maximize profit, but the risk level may be high.
 To assess and manage risk, I used the following measures:
 
 ### 1. **Value-at-Risk (VaR):**
-**Value-at-Risk (VaR)** estimates the maximum loss over a specified period for a given confidence level \( \alpha \):
+**Value-at-Risk (VaR)** estimates the maximum loss over a specified period for a given confidence level \(\alpha\):
 
 $$
 \text{VaR}_{\alpha} = \inf \{ x \in \mathbb{R} : P(L > x) \leq 1 - \alpha \}

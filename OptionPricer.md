@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Language Tests"
+
 permalink: /option-pricer/
 
 ---
@@ -29,13 +29,13 @@ C = S_0 N(d_1) - K e^{-rT} N(d_2)
 $$
 
 Where:
-- \( C \) is the price of the call option.
-- \( S_0 \) is the current price of the underlying asset.
-- \( K \) is the strike price.
-- \( r \) is the risk-free interest rate.
-- \( T \) is the time to maturity.
-- \( N(\cdot) \) is the cumulative distribution function of the standard normal distribution.
-- \( d_1 \) and \( d_2 \) are calculated as:
+- \(C\) is the price of the call option.
+- \(S_0\) is the current price of the underlying asset.
+- \(K\) is the strike price.
+- \(r\) is the risk-free interest rate.
+- \(T\) is the time to maturity.
+- \(N(\cdot)\) is the cumulative distribution function of the standard normal distribution.
+- \(d_1\) and \(d_2\) are calculated as:
 
 $$
 d_1 = \frac{\ln\left(\frac{S_0}{K}\right) + \left(r + \frac{\sigma^2}{2}\right)T}{\sigma \sqrt{T}}
@@ -55,7 +55,7 @@ P = K e^{-rT} N(-d_2) - S_0 N(-d_1)
 $$
 
 Where:
-- \( P \) is the price of the put option.
+- \(P\) is the price of the put option.
 - The other terms are defined similarly to the call option formula.
 
 ## American Options
@@ -80,17 +80,17 @@ C = \max(S_t - K, e^{-r\Delta t} [pC_u + (1 - p)C_d])
 $$
 
 Where:
-- \( C \) is the option price.
-- \( S_t \) is the asset price at time \( t \).
-- \( K \) is the strike price.
-- \( C_u \) and \( C_d \) are the option prices at the up and down nodes, respectively.
-- \( p \) is the probability of an upward movement, calculated as:
+- \(C\) is the option price.
+- \(S_t\) is the asset price at time \(t\).
+- \(K\) is the strike price.
+- \(C_u\) and \(C_d\) are the option prices at the up and down nodes, respectively.
+- \(p\) is the probability of an upward movement, calculated as:
 
 $$
 p = \frac{e^{r\Delta t} - d}{u - d}
 $$
 
-- \( \Delta t \) is the length of each time step.
+- \(\Delta t\) is the length of each time step.
 
 ## The Greeks
 
@@ -180,11 +180,11 @@ S_T = S_0 \exp\left[\left(r - \frac{\sigma^2}{2}\right)T + \sigma \sqrt{T} Z\rig
 $$
 
 Where:
-- \( S_T \) is the simulated price at time \( T \).
-- \( S_0 \) is the current asset price.
-- \( r \) is the risk-free rate.
-- \( \sigma \) is the volatility.
-- \( Z \) is a standard normal random variable.
+- \(S_T\) is the simulated price at time \( T \).
+- \(S_0\) is the current asset price.
+- \(r\) is the risk-free rate.
+- \(\sigma\) is the volatility.
+- \(Z\) is a standard normal random variable.
 
 #### **Step 2: Calculating the Payoff**
 For a call option, the payoff is:
@@ -206,7 +206,7 @@ $$
 \text{Option Price} = e^{-rT} \frac{1}{M} \sum_{i=1}^{M} \text{Payoff}_i
 $$
 
-Where \( M \) is the number of simulated paths.
+Where \(M\) is the number of simulated paths.
 
 ---
 layout: default
@@ -232,10 +232,10 @@ dS_t = \mu S_t dt + \sigma S_t dW_t
 $$
 
 Where:
-- \( S_t \) is the asset price at time \( t \).
-- \( \mu \) is the drift (or expected rate of return).
-- \( \sigma \) is the volatility of the asset.
-- \( dW_t \) is a Wiener process (standard Brownian motion), representing the random component.
+- \(S_t\) is the asset price at time \(t\).
+- \(\mu\) is the drift (or expected rate of return).
+- \(\sigma\) is the volatility of the asset.
+- \(dW_t\) is a Wiener process (standard Brownian motion), representing the random component.
 
 ### Simulating Asset Prices Using GBM
 
@@ -277,17 +277,17 @@ Where:
 
 ### Estimating the Option Price
 
-The Monte Carlo estimate of the option price is the discounted average of the payoffs from all simulated paths. For \( M \) simulated paths, the price of the European option is given by:
+The Monte Carlo estimate of the option price is the discounted average of the payoffs from all simulated paths. For \(M\) simulated paths, the price of the European option is given by:
 
 $$
 \text{Option Price} = e^{-rT} \frac{1}{M} \sum_{i=1}^{M} \text{Payoff}_i
 $$
 
 Where:
-- \( r \) is the risk-free interest rate.
-- \( T \) is the time to maturity.
-- \( \text{Payoff}_i \) is the payoff for the \( i \)-th simulated path.
-- \( M \) is the total number of simulated paths.
+- \(r\) is the risk-free interest rate.
+- \(T\) is the time to maturity.
+- \(\text{Payoff}_i\) is the payoff for the \(i\)-th simulated path.
+- \(M\) is the total number of simulated paths.
 
 ## 3. Monte Carlo Simulation for American Options
 
@@ -305,7 +305,7 @@ The general steps are:
 
 ### American Option Payoff
 
-At each time step \( t \), the payoff for an American call option is:
+At each time step \(t\), the payoff for an American call option is:
 
 $$
 \text{Payoff}_{\text{call}} = \max(S_t - K, 0)
