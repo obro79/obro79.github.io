@@ -1,14 +1,12 @@
 title: Owen Fisher
 author: Owen Fisher
 url: https://obro79.github.io # root address of the site
+baseurl: ""
 description: > # description of the site (multiple lines allowed) Hello Welcome to my website.
 
 permalink: /:slug
 favicon: "./logo.png" # relative path to site's favicon
 
-twitter:
-    username: abhinav # update or delete this
-    card: summary_large_image
 
 #theme: moonwalk # if you are using GitHub Pages, change it to remote_theme: abhinavs/moonwalk
 remote_theme: abhinavs/moonwalk

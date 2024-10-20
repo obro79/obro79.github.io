@@ -10,7 +10,7 @@ navbar_entries:
 
 project_entries:
   - title: Portfolio Optimizer
-    url: /portfolio-optimizer/
+    url: https://obro79.github.io/portfolio-optimizer/
     desc: This is an example project, configured in _data/home.yml
 
   - title: Option Pricing / Monte Carlo Simulation

@@ -1,7 +1,7 @@
 ---
 layout: post
 author: Owen Fisher
-permalink: /portfolio-optimizer/
+permalink: https://obro79.github.io/portfolio-optimizer/
 ---
 <script type="text/javascript" async
   src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.0/es5/tex-mml-chtml.js">
