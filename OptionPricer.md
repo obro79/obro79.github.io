@@ -80,8 +80,8 @@ C = \max(S_t - K, e^{-r\Delta t} [pC_u + (1 - p)C_d])
 $$
 
 Where:
-- \(C\) is the option price.
-- \(S_t\) is the asset price at time \(t\).
+- $$\C$$ is the option price.
+- $$\S_t$$ is the asset price at time \(t\).
 - \(K\) is the strike price.
 - \(C_u\) and \(C_d\) are the option prices at the up and down nodes, respectively.
 - \(p\) is the probability of an upward movement, calculated as:
